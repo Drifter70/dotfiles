@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+sxhkd &
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc config border_width         1
+bspc config window_gap           7
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer   true
+bspc config swallow_first_click   true
+bspc config active_border_color   #c5c8c6
+
+bspc rule -a mplayer2 state=floating
+bspc rule -a xterm desktop=^2
+bspc rule -a librewolf desktop=^1
+bspc rule -a Screenkey manage=off
+
+#Script Stuff
+xrandr --output eDP-1 --set TearFree on
+nmcli dev wifi connect McConnell2.4G password 7807791683
+
+#AutoStart
+picom --experimental &
+feh --bg-fill $HOME/Pictures/Pixel-Wallpaper1.jpg
+$HOME/.config/polybar/launch.sh ; rm /home/user/disown &
+xsetroot -cursor_name left_ptr &

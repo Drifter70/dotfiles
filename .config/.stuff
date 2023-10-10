@@ -1,0 +1,5 @@
+alias up="yay -Syyu -y"
+alias c="clear"
+eval $(thefuck --alias)
+alias fix="fuck"
+alias i="clear ; ip address show | grep 192 | cut -d'/' -f1 | awk -F 'inet ' {'print $2'}"
