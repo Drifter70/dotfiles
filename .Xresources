@@ -1,0 +1,53 @@
+URxvt.scrollBar: false
+URxvt.font: xft:ttf-fira-code:size=14
+URxvt.letterSpace: -3
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+XTerm.vt100.locale: false
+Xterm.vt100.utf8: true
+XTrem.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.faceName: ttf-fira-code:size=11:antialias=false
+XTerm*utf8: 1
+
+Xcursor.theme: Adwaita
+
+! special
+*.foreground:   #eceff4
+*.background:   #2e3340
+*.cursorColor:  #eceff4
+
+! black
+*.color0:       #2e3340
+*.color8:       #747c84
+
+! red
+*.color1:       #c795ae
+*.color9:       #c795ae
+
+! green
+*.color2:       #aec795
+*.color10:      #aec795
+
+! yellow
+*.color3:       #c7ae95
+*.color11:      #aec795
+
+! blue
+*.color4:       #95aec7
+*.color12:      #95aec7
+
+! magenta
+*.color5:       #ae95c7
+*.color13:      #ae95c7
+
+! cyan
+*.color6:       #95aec7
+*.color14:      #95aec7
+
+! white
+*.color7:       #c7ccd1
+*.color15:      #f3f4f5
+
