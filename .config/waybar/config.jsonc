@@ -7,8 +7,8 @@
     "gtk-layer-shell": true,
     "height": 15,
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["custom/pomodoro","mpris"],
-    "modules-right": ["custom/pacman","network", "battery","clock", "cpu", "memory"],// "backlight","pulseaudio","pulseaudio#microphone", "tray"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "network", "battery","clock", "cpu", "memory"],// "backlight","pulseaudio","pulseaudio#microphone", "tray"],
     "hyprland/window": {
         "format": "{}" 
     },
@@ -16,27 +16,26 @@
     "wlr/workspaces": {
         "disable-scroll": true,
         "format": "{icon}",
-        "format-icons": {"1":"", "2" : "", "3": "", "4": "","5": "", "6": "6", "7": "7","8": "8","9":"9"},
         "all-outputs": true,
         "on-click": "activate"
     },
     
     "tray": {
-        "icon-size": 18,
+        "icon-size": 5,
         "spacing": 10
     },
     "cpu" : {
       "interval": 1,
-      "format": "  {}%"
+      "format": "CPU  {}%"
     },
     "memory": {
       "interval": 1,
-      "format": "  {}%"
+      "format": "Mem  {}%"
     },
 
     "clock": {
-        "format": "{: %I:%M %p }",
-        "format-alt":"{: %a, %b %e}",
+        "format": "{:%I:%M %p }",
+        "format-alt":"{:%a, %b %e}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
@@ -55,51 +54,51 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "Dischaging {capacity}%",
+        "format-charging": "Charging {capacity}%",
+        "format-plugged": "Charging {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
-        "format-muted": " Muted",
+        "format-muted": "Muted",
         "on-click": "pamixer -t",
         "on-right-click": "exec pavucontrol",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "scroll-step": 1,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": "{volume}%",
+        "format-source-muted": "Muted",
         "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
+        "on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-down": "pamixer --default-source -d 1",
+        "scroll-step": 1
     },
     
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-wifi": "Wifi  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ethr",
         "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-linked": "{ifname} (No IP) no ip",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+        "format-alt": "{essid} {ipaddr}"
     },
 
     "bluetooth": {
@@ -111,68 +110,6 @@
 	    "tooltip-format-enumerate-connected": "{device_alias}"
     },
      
-    "mpris": {
-      "title-len": 40,
-      "interval":1,
-      "album-len":0,
-      "max-len": 60,
-      "format": "{player_icon} {dynamic}",
-      "format-paused": "{player_icon} {dynamic}",
-      "player-icons": {
-        "default": "▶",
-        "mpv": "🎵",
-        "spotify": "",
-        "firefox": ""
-      },
-      "status-icons": {
-        "paused": ""
-      },
-      "ignored-players": ["vlc", "firefox"]
-    },
-     
-    "mpd": {
-      "format": "{stateIcon} {artist} -  {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{stateIcon} {artist} -  {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-      "interval": 2,
-      "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-
-    "custom/pacman": {
-      "format": " {}",
-      "interval" : 100,
-      "exec" : "~/.local/scripts/checkupdate",
-      "exec-if" : "exit 0",
-      "on-click": "alacritty -e paru"
-    },
-    
-   "custom/pomodoro": {
-      "exec": "i3-gnome-pomodoro status --format=waybar --show-seconds | awk '{gsub(/Pomodoro /,\"\")}1'",
-       "return-type": "json",
-       "interval": 1,
-       "format": " {}",
-       "on-click": "i3-gnome-pomodoro toggle",
-       "on-middle-click": "i3-gnome-pomodoro stop",
-       "on-right-click": "i3-gnome-pomodoro start-stop"
-    }
-    
-}
-
-
    // "mpris": {
    //    "format": "DEFAULT: {player_icon} {artist} : {title} - [{length}]",
    //    "format-paused": "DEFAULT: {status_icon} {artist} : {title} - [{length}]",
@@ -209,4 +146,5 @@
     //   "exec" : "pomo status",
     //   "exec-if" : "exit 0"
     // },
-    // 
+    //
+}

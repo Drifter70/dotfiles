@@ -24,7 +24,7 @@ alias t="tmux new-session -A -s Main ;bq"
 # File stuff
 alias ls="clear && ls --color=auto -A"
 alias la="ls -a"
-alias ls='eza --icons'
+# alias ls='eza --icons'
 # Vim alias
 alias b="nvim ~/.bashrc &&. ~/.bashrc"
 alias x="nvim ~/.Xresources && xrdb ~/.Xresources"
@@ -32,6 +32,8 @@ alias v="nvim ~/.vimrc"
 alias tm="nvim ~/.config/.tmux/.tmux.conf ;bq"
 alias bc="nvim ~/.config/.stuff &&bq"
 
+# Swaybg
+alias sbg="swaybg -i"
 # Sourcing files
 # source ~/.config/lf-icon
 tmux source ~/.config/tmux/tmux.conf

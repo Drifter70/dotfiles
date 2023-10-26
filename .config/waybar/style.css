@@ -22,9 +22,9 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 5px;
+  padding: 3px;
   color: #313244;
-  margin-right: 5px;
+  margin-right: 2px;
   /* margin-left: 10px; */
 }
 
@@ -57,15 +57,11 @@ tooltip {
 #window,
 #clock,
 #battery,
-#mpris,
 #pulseaudio,
-#custom-pacman,
 #network,
 #bluetooth,
-#temperature,
 #workspaces,
 #tray,
-#mpd,
 #custom-pomodoro,
 #cpu,
 #memory,
@@ -75,8 +71,8 @@ tooltip {
   background: #1e1e2e;
   opacity: 1;
   padding: 0px 7px;
-  margin-top: 5px;
-  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   /* border: 1px solid #b5b0a7; */
 }
 
@@ -85,15 +81,14 @@ tooltip {
   background: #1e1e2e;
   opacity: 1;
   padding: 0px 7px;
-  margin-top: 5px;
-  margin-bottom: 6px;
 }
 
 #pulseaudio {
   color: #89b4fa;
-  border-radius: 0px;
+  border-radius: 7px;
+  margin-right: 5px;
   border-left: 0px;
-  border-right: 0px;
+  border-right: 7px;
 }
 
 #pulseaudio.microphone {
@@ -145,7 +140,7 @@ tooltip {
   border-radius: 7px;
   /* margin-left: 10px; */
   margin-right: 5px;
-  padding-right: 0px;
+  padding-right: 3px;
   border-right: 0px;
 }
 
