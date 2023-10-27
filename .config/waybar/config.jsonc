@@ -5,7 +5,7 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 15,
+    "height": 32,
     "modules-left": ["wlr/workspaces"],
     "modules-center": [],
     "modules-right": ["pulseaudio", "network", "battery","clock", "cpu", "memory"],// "backlight","pulseaudio","pulseaudio#microphone", "tray"],
